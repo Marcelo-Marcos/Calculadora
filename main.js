@@ -61,56 +61,27 @@ function limparUltimoDado() {
   console.log(listaDeValores);
 }
 
-// Adicionar os eventos de click para os botões de números
-document.getElementById('numero-0').addEventListener('click', function() {
-  registraNumero('0');
-});
-document.getElementById('numero-1').addEventListener('click', function() {
-  registraNumero('1');
-});
-document.getElementById('numero-2').addEventListener('click', function() {
-  registraNumero('2');
-});
-document.getElementById('numero-3').addEventListener('click', function() {
-  registraNumero('3');
-});
-document.getElementById('numero-4').addEventListener('click', function() {
-  registraNumero('4');
-});
-document.getElementById('numero-5').addEventListener('click', function() {
-  registraNumero('5');
-});
-document.getElementById('numero-6').addEventListener('click', function() {
-  registraNumero('6');
-});
-document.getElementById('numero-7').addEventListener('click', function() {
-  registraNumero('7');
-});
-document.getElementById('numero-8').addEventListener('click', function() {
-  registraNumero('8');
-});
-document.getElementById('numero-9').addEventListener('click', function() {
-  registraNumero('9');
-});
+// Adicionar os eventos de click para os botões
 
+const botoes = document.querySelectorAll('.botoes'); // Seleciona todos os botões da calculadora
 
-document.getElementById('operador_+').addEventListener('click', function() {
-  registraNumero('+');
+botoes.forEach(button => {
+  button.addEventListener('click', event => {
+    const valorDoBotao = event.target.value; // Obtém o valor do botão clicado
+    switch(valorDoBotao) {
+      case '=':
+      dados2();
+      break;
+      case 'o':
+      limparUltimoDado();
+      break;
+      case 'C':
+      limparDados();
+      break;
+      default:
+      registraNumero(valorDoBotao);
+      break;
+    }
+    
+  });
 });
-document.getElementById('operador_-').addEventListener('click', function() {
-  registraNumero('-');
-});
-document.getElementById('operador_*').addEventListener('click', function() {
-  registraNumero('*');
-});
-document.getElementById('operador_/').addEventListener('click', function() {
-  registraNumero('/');
-});
-
-// Adicionar evento para o botão de calcular
-document.getElementById('calcular').addEventListener('click', dados2);
-
-// Adicionar evento para o botão de limpar dados
-document.getElementById('operador_C').addEventListener('click', limparDados);
-
-document.getElementById('numero-o').addEventListener('click', limparUltimoDado);
