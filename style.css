@@ -57,7 +57,21 @@ h1 {
 }
 
 .botoes {
-  height: 120px;
+  height: 90px;
   width: 75px;
-    font-size: 40px;
+  font-size: 40px;
+}
+
+.imagem-back-space {
+  height: 60px;
+  width: 75px;
+  font-size: 1px; /* Evita texto visível */
+  background-image: url('img/back-space.png');
+  background-repeat: no-repeat;
+  background-size: contain; /* Garante que a imagem se ajuste ao botão */
+  background-position: center; /* Centraliza a imagem */
+  border: none; /* Remove a borda padrão */
+  padding: 0; /* Remove o espaçamento interno */
+  cursor: pointer; /* Estiliza o cursor */
+  color: transparent;
 }

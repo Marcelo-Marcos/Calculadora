@@ -7,30 +7,20 @@ function registraNumero(valor) {
 
     if (valor === '+' || valor === '-' || valor === '*' || valor === '/') {
       
-      //listaDeValores.push(valor);
 
       let controle = listaDeValores.length -1;
-
-      console.log(valor, controle);
-
-      console.log(listaDeValores[controle]);
        
       if (listaDeValores[controle] === '+' || listaDeValores[controle] === '-' || listaDeValores[controle] === '*' || listaDeValores[controle] === '/') {
         listaDeValores.pop();
-        console.log(`Valor teste 1 ${listaDeValores}`);
         listaDeValores.push(valor);
         campoResultado.value = listaDeValores.join('');
-        console.log(listaDeValores);
       } else {
-          console.log(`Valor teste 2 ${listaDeValores}`);
           listaDeValores.push(valor);
           campoResultado.value = listaDeValores.join('');
       }
    } else {
-        console.log(`Valor teste 3 ${listaDeValores}`);
         listaDeValores.push(valor);
         campoResultado.value = listaDeValores.join('');
-        console.log(campoResultado.value);
    }
 }
 
@@ -58,7 +48,6 @@ function limparUltimoDado() {
   const campoResultado = document.getElementById('resultado');
   listaDeValores.pop();
   campoResultado.value = listaDeValores.join('');
-  console.log(listaDeValores);
 }
 
 // Adicionar os eventos de click para os botões
@@ -68,6 +57,7 @@ const botoes = document.querySelectorAll('.botoes'); // Seleciona todos os botõ
 botoes.forEach(button => {
   button.addEventListener('click', event => {
     const valorDoBotao = event.target.value; // Obtém o valor do botão clicado
+
     switch(valorDoBotao) {
       case '=':
       dados2();
